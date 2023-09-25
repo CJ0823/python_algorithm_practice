@@ -1,0 +1,11 @@
+- 팁
+자릿수와 크기가 정해진 숫자는 뺄셈, divmod를 활용
+brute force의 경우의 수가 10개 정도면 그냥 시도해도 좋음
+
+- 문법
+이중 for문은 인자값 2개로 처리 가능함
+ovl_list = [[1,2], [3,4]]
+ex) for k, v in ovl_list:
+      ...
+
+if 0: False
