@@ -1,0 +1,5 @@
+- 팁
+
+- 문법
+이중배열의 중복 제거는 list를 tuple로 변형한 후 set에 넣음으로써 할 수 있다.
+tuple은 hashable하며, list는 unhashable해서 set의 key값으로 사용할 수 없기 때문이다.

@@ -1,2 +1,3 @@
-a = ["a", "r", "b", "c", "q", "ko"]
-print(sorted(a, key=len, reverse=True))
+a = {[1,2]}
+a.add([1,2])
+print(a)
