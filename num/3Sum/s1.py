@@ -1,12 +1,38 @@
-from typing import List
-
-
+# Two Pointer Approach
+'''
+sort - can handle duplicated numbers
+two pointer - nominate two pointer and move them on the condition
+'''
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-        ans = []
-        for i in range(len(nums) - 2):
-            for j in range(i + 1, len(nums) - 1):
-                for k in range(j + 1, len(nums)):
-                    if nums[i] + nums[j] + nums[k] == 0:
-                        ans.append([nums[i], nums[j], nums[k]])
-        return list(set(tuple(item) for item in ans))
+    def threeSum(self, nums):
+        nums.sort()
+        answer = []
+
+        if len(nums) < 3:
+            return answer
+
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                break
+
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            low, high = i + 1, len(nums) - 1
+            while low < high:
+                s = nums[i] + nums[low] + nums[high]
+                if s > 0:
+                    high -= 1
+                elif s < 0:
+                    low += 1
+                else:
+                    answer.append([nums[i], nums[low], nums[high]])
+                    lastLowOccurrence, lastHighOccurrence = nums[low], nums[high]
+
+                    while low < high and nums[low] == lastLowOccurrence:
+                        low += 1
+
+                    while low < high and nums[high] == lastHighOccurrence:
+                        high -= 1
+
+        return answer
