@@ -1,4 +1,7 @@
 - 팁
+기본적으로 떠오르는 사항이 이중 for문 또는 삼중 이상의 for문이라면, Brute forace 방식으로 접근했을 때 Time limit Exceeded가 걸릴 것이라 예상해야한다.
+two pointer
+sort
 
 - 문법
 이중배열의 중복 제거는 list를 tuple로 변형한 후 set에 넣음으로써 할 수 있다.
