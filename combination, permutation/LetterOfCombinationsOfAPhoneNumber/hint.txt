@@ -1,0 +1,5 @@
+- 팁
+
+
+- 문법
+itertools.product
