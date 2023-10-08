@@ -1,5 +1,5 @@
 - 팁
-
+backtracking
 
 - 문법
 itertools.product
