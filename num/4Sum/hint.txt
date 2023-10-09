@@ -1,0 +1,4 @@
+- 팁
+my: two pointer
+
+- 문법
