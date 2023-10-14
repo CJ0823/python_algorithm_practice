@@ -29,35 +29,29 @@ class Solution:
                 before.next = None
         return head
 
-
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
 class Solution2:
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        if head.next is None:
-            return head
+    class Solution:
+        def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+            if head.next is None:
+                return None
 
-        vals = []
-        while head.next is not None:
-            vals.append(head.val)
-            head = head.next
+            vals = []
+            while head is not None:
+                vals.append(head.val)
+                head = head.next
 
-        target_idx = len(vals) - n
-        new_head = ListNode(val=None)
-        start = new_head
-        for idx in range(0, len(vals)):
-            if idx == target_idx:
-                continue
-            else:
-                if new_head.val is None:
-                    new_head = ListNode(val=vals[idx])
-                    start = new_head
+            target_idx = len(vals) - n
+            s = ListNode(val=None)
+            new_head = s
+            for idx in range(0, len(vals)):
+                if idx == target_idx:
+                    continue
                 else:
-                    new_head.next = ListNode(val=vals[idx])
-                    new_head = new_head.next
-        return start
-
-
+                    if s.val is None:
+                        s = ListNode(val=vals[idx])
+                        new_head = s
+                    else:
+                        s.next = ListNode(val=vals[idx])
+                        s = s.next
+            return new_head
+Solution2().removeNthFromEnd(head=head, n=2)
