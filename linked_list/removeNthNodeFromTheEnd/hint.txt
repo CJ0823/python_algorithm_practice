@@ -1,7 +1,10 @@
 - 팁
-- two pointer : 2번 순환하지 않아도 풀 수 있는 방법이 있다.
+two pointer : 2번 순환하지 않아도 풀 수 있는 방법이 있다.
+
 
 - 문법
+참조를 가리키는 변수로 하나의 노드의 next를 변경하면 원래 참조를 받던 변수의 노드의 next도 변경된다.
+ex) d = ListNode, s = d; s.next = s.next.next; -> d.next == s.next.next == d.next.next
 
 - 배운점
 linked_list의 첫 항
