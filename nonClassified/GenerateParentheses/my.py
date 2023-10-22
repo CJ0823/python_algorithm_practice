@@ -1,20 +1,17 @@
-from typing import List
+from typing import List, Optional
 
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        # 3 = (3 x 1) + (2 x 1 + 1 x 1) + (1 x 1 + 2 x 1) + (1 x 3)
-        # 4 = (4 x 1) + (3 x 1 + 1 x 1) + (2 x 1 + 2 x 1) + (1 x 1 + 3 x 1) + (1 x 4)
-        def getP(n: int):
-            return "(" * n + ")" * n if n > 0 else ""
+        count = n * 2
+        l, r = "(", ")"
+        sub = ""
 
-        ans = []
-        idx = n
-        while idx:
-            i = n - idx
-            ans.append(getP(idx) + getP(i))
-            if (getP(idx) + getP(i)) != getP(i) + getP(idx):
-                ans.append(getP(i) + getP(idx))
-            idx -= 1
+        def add_p(p: Optional[str]):
+            if not p:
+                p += l
+                return p
+            else:
+                if p[-1] == l:
+
         return ans
-
