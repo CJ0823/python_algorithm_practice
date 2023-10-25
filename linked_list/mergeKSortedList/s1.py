@@ -7,6 +7,7 @@ class ListNode:
         self.next = next
 class Solution:
     def merge(self, left: ListNode, right: ListNode) -> ListNode:
+        # same with mergeTwoSortedList
         dummy = ListNode(-1)
         temp = dummy
         while left and right:
