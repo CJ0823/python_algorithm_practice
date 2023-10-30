@@ -20,6 +20,8 @@ class Solution:
             head.next = head.next.next
             dummy.next = head
             head = dummy.next.next
+            if head:
+                dummy.next.next = head.next
         return ans.next
 
 head = ListNode()
