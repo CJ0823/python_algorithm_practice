@@ -1,13 +1,5 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        # Handle division by zero
-        if divisor == 0:
-            return 2 ** 31 - 1
-
-        # Handle overflow case
-        if dividend == -2 ** 31 and divisor == -1:
-            return 2 ** 31 - 1
-
         # Get the sign of the result
         sign = 1
         if dividend < 0:
